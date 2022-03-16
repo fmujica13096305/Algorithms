@@ -5,10 +5,9 @@ public class ReverseWords {
     public static void main (String args[]){
         String sentence = "hola mundo";
         char str[] = sentence.toCharArray();
-        for (int i = 0 ; i < str.length ; i++){
-            System.out.println(str[i]);
 
-        }
+
+
         reverseWords(str);
 
     }
@@ -24,6 +23,11 @@ public class ReverseWords {
             sentence[start] = sentence[end];
             start++;
             end--;
+        }
+
+
+        for (char c : sentence) {
+            System.out.println("" + c);
         }
 
 
