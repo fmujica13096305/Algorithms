@@ -49,7 +49,7 @@ public class ReverseWords {
         for (char c : sentence) {
             System.out.println("" + c);
         }
-        String ansStr = String.valueOf(Arrays.copyOfRange(s, 0, writePtr));
+        //String ansStr = String.valueOf(Arrays.copyOfRange(s, 0, writePtr));
 
         return String.valueOf(sentence);
     }

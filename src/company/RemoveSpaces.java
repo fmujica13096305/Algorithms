@@ -1,11 +1,14 @@
 package company;
 
+import java.util.Arrays;
+
 public class RemoveSpaces {
 
     public static void main(String[] args) {
-        String sentence = "aaabcccdhsdhs";
+        String sentence = "hola mundo cruel";
         char str[] = sentence.toCharArray();
-        removeWhiteSpaces(str);
+        String r = removeWhiteSpaces(str);
+        System.out.println(r);
     }
 
     static String removeWhiteSpaces(char[] s) {
@@ -15,19 +18,21 @@ public class RemoveSpaces {
         int readIndex = 0;
         int writeIndex = 0;
 
-        while (true){
+        while (readIndex < s.length){
 
             if (!hasWhiteSpaces(s[readIndex])){
                 s[writeIndex] = s[readIndex];
-                readIndex++;
+                writeIndex++;
             }
-            writeIndex++;
+            readIndex++;
+
         }
 
 
 
+        String re = String.valueOf(Arrays.copyOfRange(s, 0 , writeIndex));
 
-        return new String(s);
+        return re;
     }
 
 
