@@ -25,9 +25,7 @@ public class RemoveSpaces {
         }
 
 
-
-
-        return new String(s);
+//return new String(s);
     }
 
 
