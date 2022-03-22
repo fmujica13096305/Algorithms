@@ -1,6 +1,4 @@
-package company;
-
-import java.util.Arrays;
+package main;
 
 public class ReverseWords {
 

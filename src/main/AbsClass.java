@@ -1,4 +1,4 @@
-package company;
+package main;
 
 public abstract class AbsClass {
 

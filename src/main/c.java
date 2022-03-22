@@ -1,4 +1,4 @@
-package company;
+package main;
 
 public class c extends AbsClass{
          @Override

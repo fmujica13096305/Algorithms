@@ -1,4 +1,4 @@
-package company;
+package main;
 
 public class MaxMin {
     public static void main (String [] args){
