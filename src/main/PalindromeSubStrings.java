@@ -5,42 +5,54 @@ import java.util.List;
 
 public class PalindromeSubStrings {
 
-// This function finds if the substring from index [start to last] is palindrome or not
-	public static boolean isPalindrome(String input, int start, int last) {
-		while (last > start) {
-			if (input.charAt(start) != input.charAt(last))
+
+
+	// This function receives input and returns palindromes list
+	public static List<String> findAllPalindromeSubstrings(String inputString) {
+		List<String> palindromes = new ArrayList<String>();
+		// TODO: Write - Your - Code
+		for (int i = 0 ; i < inputString.length(); i++ ) {
+			//System.out.println("char : " + inputString);
+			for (int j = i + 1 ; j < inputString.length()  ; j ++){
+				if(isPalindrome(inputString , i , j)){
+					palindromes.add(inputString.substring(i , j + 1));
+				}
+
+			}
+		}
+
+		return palindromes;
+	}
+
+	public static boolean isPalindrome(String input , int start , int last){
+		while(start < last){
+			if (input.charAt(start) == input.charAt(last)){
+				start ++ ;
+				last -- ;
+
+			}else{
 				return false;
-			start++;
-			last--;
+			}
 		}
 		return true;
 	}
 
-	// This function receives input string and returns the palindromes list
-	public static List<String> findAllPalindromeSubstrings(String input) {
-		List<String> palindrome = new ArrayList<String>();
-		for (int i = 0; i < input.length(); i++) {
-			for (int j = i + 1; j < input.length(); j++) {
-				// storing the palindromes in palindromes array
-				if (isPalindrome(input, i, j)) {
-					palindrome.add(input.substring(i, j+1));
-				}
-			}
-		}
-
-		return palindrome;
-	}
-
 	public static void main(String[] args) {
-		String[] inputStr = {"aabbbaa", "321230990", "educative"};
-		for (int i = 0; i < inputStr.length; i++) {
-			List<String> result = findAllPalindromeSubstrings(inputStr[i]);
-			System.out.println((i + 1) + ".   Input string: " + inputStr[i]);
-			System.out.println("     Palindromes: " + result.toString());
-			System.out.println("     Total palindrome substrings: " + result.size());
-			System.out.println(
-					"----------------------------------------------------------------------------------------------------\n");
+		List<String> result = new ArrayList<>();
+		String arr[] = {"xxyyxxy"};
+		for (int i = 0 ; i < arr.length ; i++ ) {
+			result = findAllPalindromeSubstrings(arr[i]);
 		}
+
+		for (String r : result){
+			System.out.println("list =" + result);
+
+		}
+
+
+
+
+
 	}
 
 
