@@ -8,13 +8,13 @@ public class intToRoman {
 
 
 
-        String s = intToRoman("1994");
+        String s = intToRoman(8);
         System.out.println(s);
 
     }
 
-    public static String intToRoman(String num) {
-
+    public static String intToRoman(int num) {
+        String res = "";
         LinkedHashMap<Integer,String> map = new LinkedHashMap<>();
         map.put(1000,"M");
         map.put(900,"CM");
@@ -30,17 +30,18 @@ public class intToRoman {
         map.put(4,"IV");
         map.put(1,"I");
 
-        char arr[] = num.toCharArray();
-
-        int mult = 1;
-        String number = "";
-        String res = "";
-        for (int i = num.length() ; i > 0 ; i--){
-           number = arr[i - 1];
-           res = res + map.get(number * mult);
-           mult = mult * 10;
+        while(num > 0){
+            for(int i : map.keySet()){
+                if(num >= i){
+                    res = res + map.get(i);
+                    num = num - i;
+                    break;
+                }
+            }
         }
+
         return res;
     }
 }
+
 
